@@ -27,7 +27,7 @@ body {
   position: relative;
   width: 90%;
   max-width: 1000px;
-  height: 70vh;
+  aspect-ratio: 16 / 9;
   border-radius: 20px;
   overflow: hidden;
   box-shadow: 0 0 20px 8px #FFCDC9;
@@ -80,17 +80,21 @@ p {
 
 /* ซ้าย / ขวา */
 .left, .right {
-  width: 100%;
+  width: 50%;              /* ครึ่งจริง ๆ */
   height: 100%;
   background-image: url("01.jpg");
-  background-size: cover;
-  background-position: center;
+  background-size: 200% 100%;   /* ขยายแนวนอน 2 เท่า */
   background-repeat: no-repeat;
-  transition: 1s ease;
+  transition: transform 1s ease;
 }
 
-.left { background-position: left center; }
-.right { background-position: right center; }
+.left {
+  background-position: left center;
+}
+
+.right {
+  background-position: right center;
+}
 
 /* เปิดการ์ด */
 .container:hover .left,
@@ -205,4 +209,5 @@ btn.addEventListener("click", () => {
 
 </body>
 </html>
+
 
